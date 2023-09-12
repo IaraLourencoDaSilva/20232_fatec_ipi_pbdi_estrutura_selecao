@@ -20,7 +20,9 @@ BEGIN
 END;
 $$
 
--- DO $$
+
+-- DO 
+-- $$
 -- DECLARE
 -- 	a INT := fn_valor_aleatorio_entre(0, 20);
 -- 	b INT := fn_valor_aleatorio_entre(0,20);
@@ -31,20 +33,21 @@ $$
 -- BEGIN
 -- 	RAISE NOTICE '%x% + %x + % = 0', a, U&'\00B2', b, c;
 -- 	IF a = 0 THEN
--- 		RAISE NOTICE 'Não possui raiz real';
+-- 		RAISE NOTICE 'Não uma equação do segunda grau';
 -- 	ELSE 
--- 		delta = 
+-- 		delta := b^2-4*a*c;
+-- 		RAISE NOTICE 'valor de delta: %', delta;
 -- 		IF delta < 0 THEN
--- 			RAISE NOTICe 'Sem raízes';
+-- 			RAISE NOTICe 'Nenhuma raízes';
 -- 		ELSIF delta = 0 THEN
 -- 			raizUm := (-b + |/delta)/2 * a;
 -- 			RAISE NOTICE 'Tem uma raiz; %', raizUm;
 -- 		ElSE 
 -- 			raizUm := (-b + |/delta)/2*a;
--- 			raizDois := (-b - |/delta)2*a;
+-- 			raizDois := (-b - |/delta)/2*a;
 -- 			RAISE NOTICE 'Tem duas raises reais % e %', raisUm,raisDois;
 -- 		END IF;
--- 	END IF
+-- 	END IF;
 -- END;
 -- $$
 
