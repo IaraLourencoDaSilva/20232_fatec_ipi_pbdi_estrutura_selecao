@@ -1,15 +1,52 @@
+--CASE
 DO $$
-DECLARE
-	a INT := fn_valor_aleatorio_entre(0, 20);
-	b INT := fn_valor_aletorio_entre(0,20);
-	c INT := fn_valor_alatorio_entre(0,20);
-	delta NUMERIC(10,2);
-	raizUm NUMERIC(10,2);
-	raizDois NUMERIC(10,2);
+DECLARE 
+	valor INT := fn_valor_aleatorio_entre(1,32);
+	mensagem VARCHAR(200);
 BEGIN
-	
+	RAISE NOTICE 'O valor é: %', valor;
+	CASE valor 
+		WHEN 1 THEN
+			RAISE NOTICE 'ímpar';
+		WHEN 3 THEN 
+			RAISE NOTICE 'ímpar';
+		WHEN 2 THEN
+			RAISE NOTICE 'par';
+		WHEN 4 THEN 
+			RAISE NOTICE 'par';
+		ELSE
+			RAISE NOTICE 'Fora do intervalo';
+	END CASE;
 END;
 $$
+
+-- DO $$
+-- DECLARE
+-- 	a INT := fn_valor_aleatorio_entre(0, 20);
+-- 	b INT := fn_valor_aleatorio_entre(0,20);
+-- 	c INT := fn_valor_aleatorio_entre(0,20);
+-- 	delta NUMERIC(10,2);
+-- 	raizUm NUMERIC(10,2);
+-- 	raizDois NUMERIC(10,2);
+-- BEGIN
+-- 	RAISE NOTICE '%x% + %x + % = 0', a, U&'\00B2', b, c;
+-- 	IF a = 0 THEN
+-- 		RAISE NOTICE 'Não possui raiz real';
+-- 	ELSE 
+-- 		delta = 
+-- 		IF delta < 0 THEN
+-- 			RAISE NOTICe 'Sem raízes';
+-- 		ELSIF delta = 0 THEN
+-- 			raizUm := (-b + |/delta)/2 * a;
+-- 			RAISE NOTICE 'Tem uma raiz; %', raizUm;
+-- 		ElSE 
+-- 			raizUm := (-b + |/delta)/2*a;
+-- 			raizDois := (-b - |/delta)2*a;
+-- 			RAISE NOTICE 'Tem duas raises reais % e %', raisUm,raisDois;
+-- 		END IF;
+-- 	END IF
+-- END;
+-- $$
 
 
 -- DO
