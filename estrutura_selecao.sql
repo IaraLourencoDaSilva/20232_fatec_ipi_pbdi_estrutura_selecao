@@ -6,19 +6,38 @@ DECLARE
 BEGIN
 	RAISE NOTICE 'O valor é: %', valor;
 	CASE valor 
-		WHEN 1 THEN
-			RAISE NOTICE 'ímpar';
-		WHEN 3 THEN 
-			RAISE NOTICE 'ímpar';
-		WHEN 2 THEN
-			RAISE NOTICE 'par';
-		WHEN 4 THEN 
-			RAISE NOTICE 'par';
+		WHEN 1,3, 5, 7, 9 THEN
+			mensagem := 'ímpar';
+		WHEN 2,4,6,8, 10 THEN 
+			mensagem := 'par';
 		ELSE
-			RAISE NOTICE 'Fora do intervalo';
+			mensagem := 'Fora do invervalo';
 	END CASE;
+	RAISE NOTICE '%', mensagem;
 END;
 $$
+
+-- --CASE
+-- DO $$
+-- DECLARE 
+-- 	valor INT := fn_valor_aleatorio_entre(1,32);
+-- 	mensagem VARCHAR(200);
+-- BEGIN
+-- 	RAISE NOTICE 'O valor é: %', valor;
+-- 	CASE valor 
+-- 		WHEN 1 THEN
+-- 			RAISE NOTICE 'ímpar';
+-- 		WHEN 3 THEN 
+-- 			RAISE NOTICE 'ímpar';
+-- 		WHEN 2 THEN
+-- 			RAISE NOTICE 'par';
+-- 		WHEN 4 THEN 
+-- 			RAISE NOTICE 'par';
+-- 		ELSE
+-- 			RAISE NOTICE 'Fora do intervalo';
+-- 	END CASE;
+-- END;
+-- $$
 
 
 -- DO 
